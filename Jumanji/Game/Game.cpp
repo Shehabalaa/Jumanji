@@ -45,9 +45,10 @@ Game::Game()
 	glEnable(GL_CULL_FACE);
 
 
-	levels[0] = new lvl1(1);
+	levels[0] = new lvl1(2);
 //	levels[0]->load("suzanne.obj","suzan.bmp","suzan.vertexshader","suzan.fragmentshader");
-	levels[0]->load("suzanne.obj", "suzan.bmp", "suzan.vertexshader", "suzan.fragmentshader");
+	levels[0]->load("suzanne.obj", "suzan.bmp", "untitled.vertexshader", "untitled.fragmentshader");
+	levels[0]->load("untitled.obj", "suzan.bmp", "suzan.vertexshader", "suzan.fragmentshader");
 	//level[0] = new lvl2(1);
 	//level[0] = new lvl3(1);
 	//level[0] = new lvl4(1);

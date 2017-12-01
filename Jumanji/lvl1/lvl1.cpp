@@ -9,7 +9,7 @@ lvl1::lvl1(int obj_num):lvl(obj_num)
 {
 	objects = new object*[obj_num];
 	lvl_view_matix = glm::lookAt(
-		glm::vec3(0, 30, 0),
+		glm::vec3(0, 10, 0),
 		glm::vec3(0, 0, 0),
 		glm::vec3(0, 0,-1)
 	); 

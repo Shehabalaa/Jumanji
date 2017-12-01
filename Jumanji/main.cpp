@@ -4,10 +4,11 @@ int main( void )
 {
 	Game Jumanji;
 
-	 
+	Jumanji.levels[0]->objects[0]->Translate(glm::vec3(3, 0, 0));
 	do{
-
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		Jumanji.levels[0]->Draw(0);
+		Jumanji.levels[0]->Draw(1);
 
 		//Swap buffers
 		glfwSwapBuffers();

@@ -48,7 +48,7 @@ public:
 
 public:
 	object(char * , char *,char*,char*);
-	void Translate();
+	void Translate(const glm::vec3 &);
 	void Rotate();
 	void Scale();
 	void Draw(const glm::mat4 &,const glm::mat4 &);
