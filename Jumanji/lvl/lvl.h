@@ -16,8 +16,8 @@ public:
 public:
 	lvl(int);
 	virtual void load(char *, char *, char *, char *) = 0;
-	virtual void Draw(int index) = 0;
-	virtual void Draw_all() = 0;
+	virtual void Draw(int index,const glm::vec3 & lightpos) = 0;
+	virtual void Draw_all(const glm::vec3 & lightpos) = 0;
 	~lvl();
 };
 

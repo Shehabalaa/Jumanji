@@ -1,6 +1,6 @@
 	# CMake entry point
 cmake_minimum_required (VERSION 2.6)
-project (Graphics_Lab4)
+project (Jumanji)
 
 find_package(OpenGL REQUIRED)
 

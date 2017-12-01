@@ -49,8 +49,21 @@ void object::Translate(const glm::vec3 & v)
 	ModelMatrix = glm::translate(glm::mat4(),v) * ModelMatrix;
 }
 
+void object::Rotate(float x_angle_in_rand, float y_angle_in_rand, float z_angle_in_rand)
+{
+	ModelMatrix = eulerAngleYXZ(y_angle_in_rand , x_angle_in_rand, z_angle_in_rand) * ModelMatrix;
 
-void object::Draw(const glm::mat4 & ViewMatrix,const glm::mat4 & ProjectionMatrix)
+
+}
+
+void object::Scale(const glm::vec3 &v)
+{
+
+	ModelMatrix = glm::scale(glm::mat4(1.0f),v) *ModelMatrix;
+}
+
+
+void object::Draw(const glm::mat4 & ViewMatrix,const glm::mat4 & ProjectionMatrix,const glm::vec3 &lightPos)
 {
 	// Clear the screen
 	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -67,7 +80,6 @@ void object::Draw(const glm::mat4 & ViewMatrix,const glm::mat4 & ProjectionMatri
 	glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &ModelMatrix[0][0]);
 	glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &ViewMatrix[0][0]);
 
-	glm::vec3 lightPos = glm::vec3(4, 4, 4);
 	glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
 
 	// Bind our texture in Texture Unit 0
