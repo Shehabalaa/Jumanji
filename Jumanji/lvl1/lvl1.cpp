@@ -8,7 +8,7 @@ lvl1::lvl1(int obj_num):lvl(obj_num)
 {
 	objects = new object*[obj_num];
 	lvl_view_matix = glm::lookAt(
-		glm::vec3(0, 0, 10),
+		glm::vec3(0, 0, 8),
 		glm::vec3(0, 0, 0),
 		glm::vec3(0, 1,0)
 	); 
@@ -19,9 +19,15 @@ lvl1::lvl1(int obj_num):lvl(obj_num)
 	objects[0]->Scale(glm::vec3(5,4,1));
 	objects[0]->MainModelMatrix = objects[0]->ModelMatrix;
 	this->load("treelog.obj", "treelog.bmp", "treelog.vertexshader", "treelog.fragmentshader");
+	//objects[1]->Scale(glm::vec3(.5, .5, .5));
 	objects[1]->Rotate(0, pi / 2, 0);
-	objects[1]->Translate(glm::vec3(0, 0, 5));
+	objects[1]->Translate(glm::vec3(0, 0, 1));
 	objects[1]->MainModelMatrix = objects[1]->ModelMatrix;
+	this->load("boy.obj", "boy.bmp", "treelog.vertexshader", "treelog.fragmentshader");
+	//objects[2]->Scale(glm::vec3(4, 4, 4));
+	objects[2]->Rotate(pi/2, 0, 0);
+	objects[2]->Translate(glm::vec3(0,1.7, 1));
+	objects[2]->MainModelMatrix = objects[2]->ModelMatrix;
 
 
 }
@@ -43,6 +49,9 @@ void lvl1::Draw(int index,const glm::vec3 & lightpos)
 
 void lvl1::Draw_all(const glm::vec3 & lightpos)
 {
+	computeMatricesFromInputs();
+	lvl_view_matix = getViewMatrix();
+	lvl_projection_matix = getProjectionMatrix();
 
 	for (int  i = 0; i <already_loaded; i++)
 	{
