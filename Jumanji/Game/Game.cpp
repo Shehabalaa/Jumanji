@@ -48,7 +48,7 @@ Game::Game()
 	levels[0] = new lvl1(2);
 //	levels[0]->load("suzanne.obj","suzan.bmp","suzan.vertexshader","suzan.fragmentshader");
 
-	//level[0] = new lvl2(1);
+	levels[1] = new lvl2(18);
 	//level[0] = new lvl3(1);
 	//level[0] = new lvl4(1);
 

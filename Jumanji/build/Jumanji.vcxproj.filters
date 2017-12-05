@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\Game\Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\suzan\suzan.cpp">
+      <Filter>suzan</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl\lvl.cpp">
+      <Filter>lvl</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl1\lvl1.cpp">
+      <Filter>lvl1</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl2\lvl2.cpp">
+      <Filter>lvl2</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl3\lvl3.cpp">
+      <Filter>lvl3</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl4\lvl4.cpp">
+      <Filter>lvl4</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\object\object.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\common\shader.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\common\controls.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\common\texture.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\common\objloader.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\Game\Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\suzan\suzan.h">
+      <Filter>suzan</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl\lvl.h">
+      <Filter>lvl</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl1\lvl1.h">
+      <Filter>lvl1</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl2\lvl2.h">
+      <Filter>lvl2</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl3\lvl3.h">
+      <Filter>lvl3</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\lvl4\lvl4.h">
+      <Filter>lvl4</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\object\object.h">
+      <Filter>object</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\common\shader.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\common\controls.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\common\texture.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\common\objloader.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\2nd Year\Graphics\Project\Jumanji\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9072406D-C9E3-34B8-B218-717CC2495ED2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{DB437934-4354-3078-82FA-7FB5FEF88D81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="suzan">
+      <UniqueIdentifier>{8D030FD7-911D-3836-9961-C9B1A34D1678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lvl">
+      <UniqueIdentifier>{55EA5C11-A293-3716-BB4C-325CC74EFC52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object">
+      <UniqueIdentifier>{8DB8E69A-405E-3E0B-BB99-4C94748EEFBD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{C017C83C-5462-3756-AD33-C435D8D98D63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lvl1">
+      <UniqueIdentifier>{95358E20-137A-3F6F-B062-290B520C2CDC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lvl2">
+      <UniqueIdentifier>{5707D2A6-EA1E-38E5-BECC-774C312F4208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lvl3">
+      <UniqueIdentifier>{B9DF80AF-B56B-38F6-97EA-6DA617AA0F59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lvl4">
+      <UniqueIdentifier>{F47A7ABD-2AE7-33A7-B951-231378D44C65}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

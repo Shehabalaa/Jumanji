@@ -1,0 +1,4 @@
+﻿  Building Custom Rule E:/2nd Year/Graphics/Project/Jumanji/external/CMakeLists.txt
+  CMake does not need to re-run because E:/2nd Year/Graphics/Project/Jumanji/Jumanji/build/external/CMakeFiles/generate.stamp is up-to-date.
+  glew.c
+  GLEW_190.vcxproj -> E:\2nd Year\Graphics\Project\Jumanji\Jumanji\build\external\Debug\GLEW_190.lib

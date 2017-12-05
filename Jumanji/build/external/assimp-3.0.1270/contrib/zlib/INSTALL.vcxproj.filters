@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\2nd Year\Graphics\Project\Jumanji\Jumanji\build\CMakeFiles\a01c3ffc9635796d35bdd15d2fc90ba6\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{011D0295-7F2F-3B5B-AEBF-6B7CE6F039D4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

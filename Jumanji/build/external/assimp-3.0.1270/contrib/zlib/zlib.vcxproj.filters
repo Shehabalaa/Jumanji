@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\adler32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\crc32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\deflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\inffast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\inflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\inftrees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\trees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\zutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\zconf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\zlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\crc32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\deflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\inffast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\inffixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\inflate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\inftrees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\trees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\zutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\2nd Year\Graphics\Project\Jumanji\external\assimp-3.0.1270\contrib\zlib\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9072406D-C9E3-34B8-B218-717CC2495ED2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{58F955C1-6384-3F76-A004-0656F68CD18B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

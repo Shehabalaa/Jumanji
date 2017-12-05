@@ -1,0 +1,62 @@
+# Blender MTL File: 'None'
+# Material Count: 5
+
+newmtl Mei_arms.001
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Colors.bmp
+map_Bump C:\\Users\\Lenovo\\Desktop\\9i4r5h7vbv-Mei\\Mei\\Mei_arms_n.dds
+
+newmtl Mei_body.001
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Colors.bmp
+map_Bump C:\\Users\\Lenovo\\Desktop\\9i4r5h7vbv-Mei\\Mei\\Mei_body_n.dds
+
+newmtl Mei_hair.001
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Colors.bmp
+map_Bump C:\\Users\\Lenovo\\Desktop\\9i4r5h7vbv-Mei\\Mei\\Mei_hair_n.dds
+
+newmtl Mei_head.001
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Colors.bmp
+map_Bump C:\\Users\\Lenovo\\Desktop\\9i4r5h7vbv-Mei\\Mei\\Mei_head_n.dds
+
+newmtl Mei_scarf.001
+Ns 92.156863
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Colors.bmp
+map_Bump C:\\Users\\Lenovo\\Desktop\\9i4r5h7vbv-Mei\\Mei\\Mei_scarf_n.dds
