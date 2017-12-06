@@ -31,7 +31,6 @@ public:
 	virtual void load(char *, char *, char *, char *) = 0;
 	virtual void Draw(int index,const glm::vec3 & lightpos) = 0;
 	virtual void Draw_all(const glm::vec3 & lightpos) = 0;
-	virtual void computeMatricesFromInputs()=0;
 
 	~lvl();
 };
