@@ -24,6 +24,7 @@ lvl1::lvl1(int obj_num):lvl(obj_num)
 	objects[1]->Rotate(0, pi / 2, 0);
 	objects[1]->Translate(glm::vec3(0, -4, -18));
 	objects[1]->MainModelMatrix = objects[1]->ModelMatrix;
+	
 	this->load("boy.obj", "boy.bmp", "treelog.vertexshader", "treelog.fragmentshader");
 	objects[2]->Rotate(0,pi, 0);
 	//objects[2]->Scale(glm::vec3(2, 2, 2));
@@ -67,8 +68,28 @@ void lvl1::Draw_all(const glm::vec3 & lightpos)
 
 void lvl1::Play(const glm::vec3 & lightpos)
 {
-
-	objects[1]->Translate(glm::vec3(0, 0, .06));
+	
+	//objects[1]->ModelMatrix *=  glm::translate(glm::mat4(1.0),glm::vec3(0, 4, 18));
+	//objects[1]->ModelMatrix *= glm::inverse(objects[1]->MainModelMatrix);
+	//objects[1]->ModelMatrix *= objects[1]->MainModelMatrix * eulerAngleYXZ(0.0f, 0.1f, 0.00f);;
+	//objects[1]->ModelMatrix *= glm::translate(glm::mat4(1.0), glm::vec3(0, -4, -18));
+	//objects[1]->Rotate(0, 0, 0.01);
+	//if (glfwGetKey(GLFW_KEY_UP) == GLFW_PRESS) {
+	//	objects[1]->Translate(glm::vec3(0, 0, - 0.1));
+	//}
+	// Move backward
+	//if (glfwGetKey(GLFW_KEY_DOWN) == GLFW_PRESS) {
+	//	objects[1]->Translate(glm::vec3(0, 0, 0.1));
+	//}
+	// Strafe right
+	//if (glfwGetKey(GLFW_KEY_RIGHT) == GLFW_PRESS) {
+	//	objects[1]->Translate(glm::vec3(0.1, 0, 0));
+	//}
+	// Strafe left
+	//if (glfwGetKey(GLFW_KEY_LEFT) == GLFW_PRESS) {
+	//	objects[1]->Translate(glm::vec3(-0.1, 0, 0));
+	//}
+	objects[1]->Translate(glm::vec3(0, 0, 0.07));
 	Draw_all(lightpos);
 	if (CollisionDetection(*objects[1], *objects[2]))
 	{
