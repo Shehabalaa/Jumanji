@@ -1,7 +1,5 @@
-
-#include"./Jumanji/lvl/lvl.h"
-
 #pragma once
+#include"./Jumanji/lvl/lvl.h"
 
 class lvl2 :public lvl
 {

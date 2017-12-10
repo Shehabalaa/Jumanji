@@ -47,7 +47,7 @@ Game::Game()
 
 	levels[0] = new lvl1(3);
 
-	levels[1] = new lvl2(18);
+	//levels[1] = new lvl2(18);
 	//level[0] = new lvl3(1);
 	//level[0] = new lvl4(1);
 

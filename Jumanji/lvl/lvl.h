@@ -1,6 +1,6 @@
-#include"../object/object.h"
 #pragma once
-
+#include"../object/object.h"
+#include <common/collisiondetection.hpp>
 class lvl
 {
 public:
@@ -31,7 +31,7 @@ public:
 	virtual void load(char *, char *, char *, char *) = 0;
 	virtual void Draw(int index,const glm::vec3 & lightpos) = 0;
 	virtual void Draw_all(const glm::vec3 & lightpos) = 0;
-
+	virtual void Play(const glm::vec3 & lightpos) = 0;
 	~lvl();
 };
 

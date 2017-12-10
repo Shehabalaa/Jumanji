@@ -71,6 +71,8 @@ add_executable( Jumanji
 	common/texture.hpp
 	common/objloader.cpp
 	common/objloader.hpp
+	common/collisiondetection.cpp
+	common/collisiondetection.hpp
 )
 target_link_libraries(Jumanji
 	${ALL_LIBS}
