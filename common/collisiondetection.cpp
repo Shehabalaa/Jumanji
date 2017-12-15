@@ -66,91 +66,78 @@ bool Line_Plane_Intersect(const line &l,const plane &pl)
 
 }
 
-bool CollisionDetection(const object & obj1, const object &obj2, BV_type BV1_type , BV_type BV2_type) // fuctions works for horizontal or vertical shapes only
+bool CollisionDetection(const object & obj1, const object &obj2, int whichobj1, int whichobj2) // fuctions works for horizontal or vertical shapes only
 {
-	if (BV1_type == Cuboid && BV2_type == Cuboid)
-	{
-		
-		glm::vec3 BV1_Vetices[8];
-		glm::vec3 BV2_Vetices[8];
-
-		for (int i = 0; i < 8; i++)
-			BV1_Vetices[i] = glm::vec3(obj1.ModelMatrix * glm::vec4(obj1.obj_BV.BV_vertices[i], 1));
-
-		for (int i = 0; i < 8; i++)
-			BV2_Vetices[i] = glm::vec3(obj2.ModelMatrix * glm::vec4(obj2.obj_BV.BV_vertices[i], 1));
-
-		//printf("%s", "obj1111111111111111111111\n");
-		//for (int i = 0; i < 8; i++)
-		//{
-		//	printf("v %f %f %f \n", BV1_Vetices[i].x, BV1_Vetices[i].y, BV1_Vetices[i].z);
-		//}
-
-		//printf("%s", "obj22222222222222\n");
-		//for (int i = 0; i < 8; i++)
-		//{
-		//	printf("v %f %f %f \n", BV2_Vetices[i].x, BV2_Vetices[i].y, BV2_Vetices[i].z);
-		//}
-
-		//intersect all edges of cube 1 with all faces of cube 2
-		//first get edges of first cube
-		line edges[12];
-		//
-		edges[0].load(BV1_Vetices[0], BV1_Vetices[1]);
-		edges[1].load(BV1_Vetices[1], BV1_Vetices[3]);
-		edges[2].load(BV1_Vetices[3], BV1_Vetices[2]);
-		edges[3].load(BV1_Vetices[2], BV1_Vetices[0]);
-
-		edges[4].load(BV1_Vetices[3], BV1_Vetices[7]);
-		edges[5].load(BV1_Vetices[7], BV1_Vetices[6]);
-		edges[6].load(BV1_Vetices[6], BV1_Vetices[2]);
-		edges[7].load(BV1_Vetices[7], BV1_Vetices[5]);
-
-		edges[8].load(BV1_Vetices[5], BV1_Vetices[4]);
-		edges[9].load(BV1_Vetices[4], BV1_Vetices[6]);
-		edges[10].load(BV1_Vetices[0], BV1_Vetices[4]);
-		edges[11].load(BV1_Vetices[1], BV1_Vetices[5]);
 
 
+	glm::vec3 BV1_Vetices[8];
+	glm::vec3 BV2_Vetices[8];
 
+	for (int i = 0; i < 8; i++)
+		BV1_Vetices[i] = glm::vec3(obj1.ModelMatrices[whichobj1] * glm::vec4(obj1.obj_BV.BV_vertices[i], 1));
 
-		//second getfaces of second cube
-		plane faces[6];
-		faces[0].load(BV2_Vetices[0], BV2_Vetices[1], BV2_Vetices[3], BV2_Vetices[2]);
-		faces[1].load(BV2_Vetices[2], BV2_Vetices[3], BV2_Vetices[7], BV2_Vetices[6]);
-		faces[2].load(BV2_Vetices[6], BV2_Vetices[7], BV2_Vetices[5], BV2_Vetices[4]);
-		faces[3].load(BV2_Vetices[4], BV2_Vetices[5], BV2_Vetices[1], BV2_Vetices[0]);
-		faces[4].load(BV2_Vetices[2], BV2_Vetices[6], BV2_Vetices[4], BV2_Vetices[0]);
-		faces[5].load(BV2_Vetices[7], BV2_Vetices[3], BV2_Vetices[1], BV2_Vetices[5]);
-
-
-		for (int i = 0; i < 12; i++)
-		{
-			for (int j = 0; j < 6; j++)
-			{
-				if (Line_Plane_Intersect(edges[i], faces[j]))
-					return true;
-
-			}
-
-		}
-
-		return false;
-
-	}
-
+	for (int i = 0; i < 8; i++)
+		BV2_Vetices[i] = glm::vec3(obj2.ModelMatrices[whichobj2] * glm::vec4(obj2.obj_BV.BV_vertices[i], 1));
 
 	//printf("%s", "obj1111111111111111111111\n");
 	//for (int i = 0; i < 8; i++)
 	//{
-	//	printf("v %f %f %f \n", obj1_vertices[i].x, obj1_vertices[i].y, obj1_vertices[i].z);
+	//	printf("v %f %f %f \n", BV1_Vetices[i].x, BV1_Vetices[i].y, BV1_Vetices[i].z);
 	//}
 
 	//printf("%s", "obj22222222222222\n");
 	//for (int i = 0; i < 8; i++)
 	//{
-	//	printf("v %f %f %f \n", obj2_vertices[i].x, obj2_vertices[i].y, obj2_vertices[i].z);
+	//	printf("v %f %f %f \n", BV2_Vetices[i].x, BV2_Vetices[i].y, BV2_Vetices[i].z);
 	//}
-	// to be continues bs mesh hnkmla isa hyea al cubes 7elwa :D
 
-};
+	//intersect all edges of cube 1 with all faces of cube 2
+	//first get edges of first cube
+	line edges[12];
+	//
+	edges[0].load(BV1_Vetices[0], BV1_Vetices[1]);
+	edges[1].load(BV1_Vetices[1], BV1_Vetices[3]);
+	edges[2].load(BV1_Vetices[3], BV1_Vetices[2]);
+	edges[3].load(BV1_Vetices[2], BV1_Vetices[0]);
+
+	edges[4].load(BV1_Vetices[3], BV1_Vetices[7]);
+	edges[5].load(BV1_Vetices[7], BV1_Vetices[6]);
+	edges[6].load(BV1_Vetices[6], BV1_Vetices[2]);
+	edges[7].load(BV1_Vetices[7], BV1_Vetices[5]);
+
+	edges[8].load(BV1_Vetices[5], BV1_Vetices[4]);
+	edges[9].load(BV1_Vetices[4], BV1_Vetices[6]);
+	edges[10].load(BV1_Vetices[0], BV1_Vetices[4]);
+	edges[11].load(BV1_Vetices[1], BV1_Vetices[5]);
+
+	//second getfaces of second cube
+	plane faces[6];
+	faces[0].load(BV2_Vetices[0], BV2_Vetices[1], BV2_Vetices[3], BV2_Vetices[2]);
+	faces[1].load(BV2_Vetices[2], BV2_Vetices[3], BV2_Vetices[7], BV2_Vetices[6]);
+	faces[2].load(BV2_Vetices[6], BV2_Vetices[7], BV2_Vetices[5], BV2_Vetices[4]);
+	faces[3].load(BV2_Vetices[4], BV2_Vetices[5], BV2_Vetices[1], BV2_Vetices[0]);
+	faces[4].load(BV2_Vetices[2], BV2_Vetices[6], BV2_Vetices[4], BV2_Vetices[0]);
+	faces[5].load(BV2_Vetices[7], BV2_Vetices[3], BV2_Vetices[1], BV2_Vetices[5]);
+
+	for (int i = 0; i < 12; i++)
+		for (int j = 0; j < 6; j++)
+			if (Line_Plane_Intersect(edges[i], faces[j]))
+				return true;	
+
+	return false;
+
+}
+
+//printf("%s", "obj1111111111111111111111\n");
+//for (int i = 0; i < 8; i++)
+//{
+//	printf("v %f %f %f \n", obj1_vertices[i].x, obj1_vertices[i].y, obj1_vertices[i].z);
+//}
+
+//printf("%s", "obj22222222222222\n");
+//for (int i = 0; i < 8; i++)
+//{
+//	printf("v %f %f %f \n", obj2_vertices[i].x, obj2_vertices[i].y, obj2_vertices[i].z);
+//}
+
+

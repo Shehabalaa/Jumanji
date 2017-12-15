@@ -1,9 +1,11 @@
 #include "object.h"
 
-
-
-object::object(char * p, char * t, char* vxshader_name, char* fragshader_name, Loading_kind lk) :obj_path(p), texrure_path(t)
+object::object(char * p, char * t, char* vxshader_name, char* fragshader_name, int Copies_num,Loading_kind lk) :obj_path(p), texrure_path(t)
 {
+	this->Copies_num = Copies_num;
+	ModelMatrices = new glm::mat4[Copies_num];
+	MainModelMatrices = new glm::mat4[Copies_num];
+	Tracking_Points = new glm::vec3[Copies_num];
 	if (lk == Normal)
 	{
 		objectID = LoadShaders(vxshader_name, fragshader_name);
@@ -47,15 +49,10 @@ object::object(char * p, char * t, char* vxshader_name, char* fragshader_name, L
 		glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), &normals[0], GL_STATIC_DRAW);
 
 		LightID = glGetUniformLocation(objectID, "LightPosition_worldspace");
-		ModelMatrix = glm::mat4(1.0);
 
 	}
 
-
-
 }
-
-
 
 void object::BV_instilizasion()
 {
@@ -130,26 +127,36 @@ void object::BV_instilizasion()
 	}
 }
 
-void object::Translate(const glm::vec3 & v)
+void object::Translate(const glm::vec3 & v,int whichobj)
 {
-	ModelMatrix = glm::translate(glm::mat4(),v) * ModelMatrix;
+	if (whichobj<Copies_num && whichobj >-1)
+	{
+		ModelMatrices[whichobj] = glm::translate(glm::mat4(), v) * ModelMatrices[whichobj];
+		Tracking_Points[whichobj] += v;
+	}
+	else
+		printf("Out of objects range!!!\n");
 }
 
-void object::Rotate(float x_angle_in_rand, float y_angle_in_rand, float z_angle_in_rand)
+void object::Rotate(float x_angle_in_rand, float y_angle_in_rand, float z_angle_in_rand, int whichobj)
 {
-	ModelMatrix = eulerAngleYXZ(y_angle_in_rand , x_angle_in_rand, z_angle_in_rand) * ModelMatrix;
-
+	if (whichobj<Copies_num && whichobj >-1)
+		ModelMatrices[whichobj] = eulerAngleYXZ(y_angle_in_rand, x_angle_in_rand, z_angle_in_rand) * ModelMatrices[whichobj];
+	else
+		printf("Out of objects range!!!\n");
 
 }
 
-void object::Scale(const glm::vec3 &v)
+void object::Scale(const glm::vec3 &v, int whichobj)
 {
-
-	ModelMatrix = glm::scale(glm::mat4(1.0f),v) *ModelMatrix;
+	if (whichobj<Copies_num && whichobj >-1)
+		ModelMatrices[whichobj] = glm::scale(glm::mat4(1.0f),v) *ModelMatrices[whichobj];
+	else
+		printf("Out of objects range!!!\n");
 }
 
 
-void object::Draw(const glm::mat4 & ViewMatrix,const glm::mat4 & ProjectionMatrix,const glm::vec3 &lightPos)
+void object::Draw(const glm::mat4 & ViewMatrix, const glm::mat4 & ProjectionMatrix, const glm::vec3 &lightPos, int whichobj)
 {
 	// Clear the screen
 	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -158,12 +165,12 @@ void object::Draw(const glm::mat4 & ViewMatrix,const glm::mat4 & ProjectionMatri
 	glUseProgram(objectID);
 
 
-	glm::mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
+	glm::mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrices[whichobj];
 
 	// Send our transformation to the currently bound shader, 
 	// in the "MVP" uniform
 	glUniformMatrix4fv(MVP_MatrixID, 1, GL_FALSE, &MVP[0][0]);
-	glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &ModelMatrix[0][0]);
+	glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &ModelMatrices[whichobj][0][0]);
 	glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &ViewMatrix[0][0]);
 
 	glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
@@ -227,4 +234,5 @@ object::~object()
 	glDeleteBuffers(1, &normalbuffer);
 	glDeleteProgram(objectID);
 	glDeleteTextures(1, &Texture);
+	delete ModelMatrices;
 }

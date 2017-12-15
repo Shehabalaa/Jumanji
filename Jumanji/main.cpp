@@ -3,15 +3,18 @@
 int main( void )
 {
 	Game Jumanji;
-
+	bool start = 0;
 	//Jumanji.levels[0]->objects[0]->Translate(glm::vec3(3, -3, 0));
-	do{
+	do {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		Jumanji.levels[0]->Play(glm::vec3(0, 0, 10));
-		
+	
+		start = start || glfwGetKey(GLFW_KEY_ENTER) == GLFW_PRESS;
+		if (start)
+			Jumanji.levels[0]->Play(glm::vec3(0, 3, 3));
+
 		//Jumanji.levels[1]->Draw_all(glm::vec3(0, 0, 10));
 
-		
+
 		//Swap buffers
 		glfwSwapBuffers();
 

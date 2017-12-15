@@ -65,8 +65,11 @@ public:
 	GLuint uvbuffer;
 	GLuint normalbuffer;
 	GLuint LightID;
-	glm::mat4 ModelMatrix;
-	glm::mat4 MainModelMatrix;
+	glm::mat4 *ModelMatrices;
+	glm::mat4 *MainModelMatrices;
+	int Copies_num; // same as tracking points and mainmodelmatrices
+	glm::vec3 *Tracking_Points; // this points will track transilations only  for each copy
+
 	BV obj_BV;
 ///////////////////////////////// assimp
 
@@ -74,12 +77,11 @@ public:
 private:
 	void BV_instilizasion();
 public:
-	object(char * , char *,char*,char*, Loading_kind=Normal);
-	void Translate(const glm::vec3 &);
-	void Rotate(float x_angle_in_rand, float y_angle_in_rand, float z_angle_in_rand);
-	void Scale(const glm::vec3 &);
-	void Draw(const glm::mat4 &,const glm::mat4 &, const glm::vec3 &lightPos);
-
+	object(char * , char *,char*,char*,int =1, Loading_kind=Normal);
+	void Translate(const glm::vec3 &,int=0);
+	void Rotate(float x_angle_in_rand, float y_angle_in_rand, float z_angle_in_rand,int=0);
+	void Scale(const glm::vec3 &,int=0);
+	void Draw(const glm::mat4 &,const glm::mat4 &, const glm::vec3 &lightPos, int = 0);
 
 	~object();
 };
